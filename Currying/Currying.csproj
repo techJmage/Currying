@@ -1,11 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>net10.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<VersionPrefix>1.0.4</VersionPrefix>
+		<VersionPrefix>1.1.0</VersionPrefix>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<LangVersion>latest</LangVersion>
+		<Authors>Tech J Mage</Authors>
+		<Description>Cypher, OGM, Query</Description>
+		<PackageProjectUrl>https://github.com/techjmage/Currying</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/techjmage/Currying</RepositoryUrl>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<DocumentationFile>$(MSBuildProjectDirectory)\Documents\Readme.xml</DocumentationFile>
+		<DefaultDocumentationGeneratedPages>Assembly</DefaultDocumentationGeneratedPages>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<DefaultDocumentationAssemblyPageName>README</DefaultDocumentationAssemblyPageName>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
-
+	<ItemGroup>
+		<PackageReference Include="DefaultDocumentation" Version="1.2.2">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<None Include="..\README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
 </Project>
