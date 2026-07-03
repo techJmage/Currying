@@ -79,7 +79,7 @@ The action to execute for each element\.
 Operator overload to support function\-first pipe syntax: `func >> arg`\.
 
 ```csharp
-public static TResult op_RightShift<TSource,TResult>(System.Func<TSource,TResult> g, TSource arg);
+public static TResult op_RightShift<TSource,TResult>(System.Func<TSource,TResult> f, TSource x);
 ```
 #### Type parameters
 
@@ -92,21 +92,17 @@ public static TResult op_RightShift<TSource,TResult>(System.Func<TSource,TResult
 `TResult`
 #### Parameters
 
-<a name='Currying.Extensions.op_RightShift_TSource,TResult_(System.Func_TSource,TResult_,TSource).g'></a>
+<a name='Currying.Extensions.op_RightShift_TSource,TResult_(System.Func_TSource,TResult_,TSource).f'></a>
 
-`g` [System\.Func&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.func-2 'System\.Func\`2')[TSource](README.md#Currying.Extensions.op_RightShift_TSource,TResult_(System.Func_TSource,TResult_,TSource).TSource 'Currying\.Extensions\.op\_RightShift\<TSource,TResult\>\(System\.Func\<TSource,TResult\>, TSource\)\.TSource')[,](https://learn.microsoft.com/en-us/dotnet/api/system.func-2 'System\.Func\`2')[TResult](README.md#Currying.Extensions.op_RightShift_TSource,TResult_(System.Func_TSource,TResult_,TSource).TResult 'Currying\.Extensions\.op\_RightShift\<TSource,TResult\>\(System\.Func\<TSource,TResult\>, TSource\)\.TResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.func-2 'System\.Func\`2')
+`f` [System\.Func&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.func-2 'System\.Func\`2')[TSource](README.md#Currying.Extensions.op_RightShift_TSource,TResult_(System.Func_TSource,TResult_,TSource).TSource 'Currying\.Extensions\.op\_RightShift\<TSource,TResult\>\(System\.Func\<TSource,TResult\>, TSource\)\.TSource')[,](https://learn.microsoft.com/en-us/dotnet/api/system.func-2 'System\.Func\`2')[TResult](README.md#Currying.Extensions.op_RightShift_TSource,TResult_(System.Func_TSource,TResult_,TSource).TResult 'Currying\.Extensions\.op\_RightShift\<TSource,TResult\>\(System\.Func\<TSource,TResult\>, TSource\)\.TResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.func-2 'System\.Func\`2')
 
-Function to apply\.
+<a name='Currying.Extensions.op_RightShift_TSource,TResult_(System.Func_TSource,TResult_,TSource).x'></a>
 
-<a name='Currying.Extensions.op_RightShift_TSource,TResult_(System.Func_TSource,TResult_,TSource).arg'></a>
-
-`arg` [TSource](README.md#Currying.Extensions.op_RightShift_TSource,TResult_(System.Func_TSource,TResult_,TSource).TSource 'Currying\.Extensions\.op\_RightShift\<TSource,TResult\>\(System\.Func\<TSource,TResult\>, TSource\)\.TSource')
-
-Argument to pass to [g](README.md#Currying.Extensions.op_RightShift_TSource,TResult_(System.Func_TSource,TResult_,TSource).g 'Currying\.Extensions\.op\_RightShift\<TSource,TResult\>\(System\.Func\<TSource,TResult\>, TSource\)\.g')\.
+`x` [TSource](README.md#Currying.Extensions.op_RightShift_TSource,TResult_(System.Func_TSource,TResult_,TSource).TSource 'Currying\.Extensions\.op\_RightShift\<TSource,TResult\>\(System\.Func\<TSource,TResult\>, TSource\)\.TSource')
 
 #### Returns
 [TResult](README.md#Currying.Extensions.op_RightShift_TSource,TResult_(System.Func_TSource,TResult_,TSource).TResult 'Currying\.Extensions\.op\_RightShift\<TSource,TResult\>\(System\.Func\<TSource,TResult\>, TSource\)\.TResult')  
-The result of invoking [g](README.md#Currying.Extensions.op_RightShift_TSource,TResult_(System.Func_TSource,TResult_,TSource).g 'Currying\.Extensions\.op\_RightShift\<TSource,TResult\>\(System\.Func\<TSource,TResult\>, TSource\)\.g') with [arg](README.md#Currying.Extensions.op_RightShift_TSource,TResult_(System.Func_TSource,TResult_,TSource).arg 'Currying\.Extensions\.op\_RightShift\<TSource,TResult\>\(System\.Func\<TSource,TResult\>, TSource\)\.arg')\.
+The result of invoking [f](README.md#Currying.Extensions.op_RightShift_TSource,TResult_(System.Func_TSource,TResult_,TSource).f 'Currying\.Extensions\.op\_RightShift\<TSource,TResult\>\(System\.Func\<TSource,TResult\>, TSource\)\.f') with [x](README.md#Currying.Extensions.op_RightShift_TSource,TResult_(System.Func_TSource,TResult_,TSource).x 'Currying\.Extensions\.op\_RightShift\<TSource,TResult\>\(System\.Func\<TSource,TResult\>, TSource\)\.x')\.
 
 <a name='Currying.Extensions.op_RightShift_TSource,TResult_(TSource,System.Func_TSource,TResult_)'></a>
 
@@ -360,40 +356,6 @@ Sequence of functions that transform the value\.
 #### Returns
 [T](README.md#Currying.Extensions.Pipe_T_(thisT,System.Func_T,T_[]).T 'Currying\.Extensions\.Pipe\<T\>\(this T, System\.Func\<T,T\>\[\]\)\.T')  
 The final transformed value after applying all [functions](README.md#Currying.Extensions.Pipe_T_(thisT,System.Func_T,T_[]).functions 'Currying\.Extensions\.Pipe\<T\>\(this T, System\.Func\<T,T\>\[\]\)\.functions')\.
-
-<a name='Currying.Extensions.PipeBack_TSource,TResult_(thisSystem.Func_TSource,TResult_,TSource)'></a>
-
-## Extensions\.PipeBack\<TSource,TResult\>\(this Func\<TSource,TResult\>, TSource\) Method
-
-Applies the function to [arg](README.md#Currying.Extensions.PipeBack_TSource,TResult_(thisSystem.Func_TSource,TResult_,TSource).arg 'Currying\.Extensions\.PipeBack\<TSource,TResult\>\(this System\.Func\<TSource,TResult\>, TSource\)\.arg') and returns the result\.
-
-```csharp
-public static TResult PipeBack<TSource,TResult>(this System.Func<TSource,TResult> f, TSource arg);
-```
-#### Type parameters
-
-<a name='Currying.Extensions.PipeBack_TSource,TResult_(thisSystem.Func_TSource,TResult_,TSource).TSource'></a>
-
-`TSource`
-
-<a name='Currying.Extensions.PipeBack_TSource,TResult_(thisSystem.Func_TSource,TResult_,TSource).TResult'></a>
-
-`TResult`
-#### Parameters
-
-<a name='Currying.Extensions.PipeBack_TSource,TResult_(thisSystem.Func_TSource,TResult_,TSource).f'></a>
-
-`f` [System\.Func&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.func-2 'System\.Func\`2')[TSource](README.md#Currying.Extensions.PipeBack_TSource,TResult_(thisSystem.Func_TSource,TResult_,TSource).TSource 'Currying\.Extensions\.PipeBack\<TSource,TResult\>\(this System\.Func\<TSource,TResult\>, TSource\)\.TSource')[,](https://learn.microsoft.com/en-us/dotnet/api/system.func-2 'System\.Func\`2')[TResult](README.md#Currying.Extensions.PipeBack_TSource,TResult_(thisSystem.Func_TSource,TResult_,TSource).TResult 'Currying\.Extensions\.PipeBack\<TSource,TResult\>\(this System\.Func\<TSource,TResult\>, TSource\)\.TResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.func-2 'System\.Func\`2')
-
-<a name='Currying.Extensions.PipeBack_TSource,TResult_(thisSystem.Func_TSource,TResult_,TSource).arg'></a>
-
-`arg` [TSource](README.md#Currying.Extensions.PipeBack_TSource,TResult_(thisSystem.Func_TSource,TResult_,TSource).TSource 'Currying\.Extensions\.PipeBack\<TSource,TResult\>\(this System\.Func\<TSource,TResult\>, TSource\)\.TSource')
-
-Argument to pass to the function\.
-
-#### Returns
-[TResult](README.md#Currying.Extensions.PipeBack_TSource,TResult_(thisSystem.Func_TSource,TResult_,TSource).TResult 'Currying\.Extensions\.PipeBack\<TSource,TResult\>\(this System\.Func\<TSource,TResult\>, TSource\)\.TResult')  
-The result of invoking the function with [arg](README.md#Currying.Extensions.PipeBack_TSource,TResult_(thisSystem.Func_TSource,TResult_,TSource).arg 'Currying\.Extensions\.PipeBack\<TSource,TResult\>\(this System\.Func\<TSource,TResult\>, TSource\)\.arg')\.
 
 <a name='Currying.Extensions._G_$8048A6C8BE30A622530249B904B537EB_$T0_'></a>
 
@@ -659,28 +621,6 @@ public sealed class Extensions.<G>$9A0204638C6A592B54686EAB5A687859<$T0,$T1>
 `$T1`
 
 Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; \<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>
-### Methods
-
-<a name='Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.PipeBack($T0)'></a>
-
-## Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.PipeBack\($T0\) Method
-
-Applies the function to [arg](README.md#Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.PipeBack($T0).arg 'Currying\.Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.PipeBack\($T0\)\.arg') and returns the result\.
-
-```csharp
-public $T1 PipeBack($T0 arg);
-```
-#### Parameters
-
-<a name='Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.PipeBack($T0).arg'></a>
-
-`arg` [$T0](README.md#Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.$T0 'Currying\.Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.$T0')
-
-Argument to pass to the function\.
-
-#### Returns
-[$T1](README.md#Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.$T1 'Currying\.Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.$T1')  
-The result of invoking the function with [arg](README.md#Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.PipeBack($T0).arg 'Currying\.Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.PipeBack\($T0\)\.arg')\.
 ### Operators
 
 <a name='Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.op_RightShift(System.Func_$T0,$T1_,$T0)'></a>
@@ -690,46 +630,42 @@ The result of invoking the function with [arg](README.md#Currying.Extensions._G_
 Operator overload to support function\-first pipe syntax: `func >> arg`\.
 
 ```csharp
-public static $T1 operator >>(System.Func<$T0,$T1> g, $T0 arg);
+public static $T1 operator >>(System.Func<$T0,$T1> f, $T0 x);
 ```
 #### Parameters
 
-<a name='Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.op_RightShift(System.Func_$T0,$T1_,$T0).g'></a>
+<a name='Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.op_RightShift(System.Func_$T0,$T1_,$T0).f'></a>
 
-`g` [System\.Func&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.func-2 'System\.Func\`2')[$T0](README.md#Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.$T0 'Currying\.Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.$T0')[,](https://learn.microsoft.com/en-us/dotnet/api/system.func-2 'System\.Func\`2')[$T1](README.md#Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.$T1 'Currying\.Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.$T1')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.func-2 'System\.Func\`2')
+`f` [System\.Func&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.func-2 'System\.Func\`2')[$T0](README.md#Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.$T0 'Currying\.Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.$T0')[,](https://learn.microsoft.com/en-us/dotnet/api/system.func-2 'System\.Func\`2')[$T1](README.md#Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.$T1 'Currying\.Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.$T1')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.func-2 'System\.Func\`2')
 
-Function to apply\.
+<a name='Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.op_RightShift(System.Func_$T0,$T1_,$T0).x'></a>
 
-<a name='Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.op_RightShift(System.Func_$T0,$T1_,$T0).arg'></a>
-
-`arg` [$T0](README.md#Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.$T0 'Currying\.Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.$T0')
-
-Argument to pass to [g](README.md#Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.op_RightShift(System.Func_$T0,$T1_,$T0).g 'Currying\.Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.op\_RightShift\(System\.Func\<$T0,$T1\>, $T0\)\.g')\.
+`x` [$T0](README.md#Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.$T0 'Currying\.Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.$T0')
 
 #### Returns
 [$T1](README.md#Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.$T1 'Currying\.Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.$T1')  
-The result of invoking [g](README.md#Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.op_RightShift(System.Func_$T0,$T1_,$T0).g 'Currying\.Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.op\_RightShift\(System\.Func\<$T0,$T1\>, $T0\)\.g') with [arg](README.md#Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.op_RightShift(System.Func_$T0,$T1_,$T0).arg 'Currying\.Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.op\_RightShift\(System\.Func\<$T0,$T1\>, $T0\)\.arg')\.
+The result of invoking [f](README.md#Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.op_RightShift(System.Func_$T0,$T1_,$T0).f 'Currying\.Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.op\_RightShift\(System\.Func\<$T0,$T1\>, $T0\)\.f') with [x](README.md#Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_.op_RightShift(System.Func_$T0,$T1_,$T0).x 'Currying\.Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.op\_RightShift\(System\.Func\<$T0,$T1\>, $T0\)\.x')\.
 
-<a name='Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_._M_$04436269E3A46C1D9C1EC050836EB9B7'></a>
+<a name='Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_._M_$5A2238FFFAB0868ADDC676FC9919C98F'></a>
 
-## Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.\<M\>$04436269E3A46C1D9C1EC050836EB9B7 Class
+## Extensions\.\<G\>$9A0204638C6A592B54686EAB5A687859\<$T0,$T1\>\.\<M\>$5A2238FFFAB0868ADDC676FC9919C98F Class
 
 Provides pipe\-back helpers and an operator overload for functions so you can call `func >> value` as a shorthand for `func(value)`\.
 
 ```csharp
-public static class Extensions.<G>$9A0204638C6A592B54686EAB5A687859<$T0,$T1>.<M>$04436269E3A46C1D9C1EC050836EB9B7
+public static class Extensions.<G>$9A0204638C6A592B54686EAB5A687859<$T0,$T1>.<M>$5A2238FFFAB0868ADDC676FC9919C98F
 ```
 #### Type parameters
 
-<a name='Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_._M_$04436269E3A46C1D9C1EC050836EB9B7.$T0'></a>
+<a name='Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_._M_$5A2238FFFAB0868ADDC676FC9919C98F.$T0'></a>
 
 `$T0`
 
-<a name='Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_._M_$04436269E3A46C1D9C1EC050836EB9B7.$T1'></a>
+<a name='Currying.Extensions._G_$9A0204638C6A592B54686EAB5A687859_$T0,$T1_._M_$5A2238FFFAB0868ADDC676FC9919C98F.$T1'></a>
 
 `$T1`
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; \<M\>$04436269E3A46C1D9C1EC050836EB9B7
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; \<M\>$5A2238FFFAB0868ADDC676FC9919C98F
 
 <a name='Currying.Extensions._G_$B7F0343159FB3A22D67EC9801612841A_$T0,$T1_'></a>
 

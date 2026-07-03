@@ -141,21 +141,34 @@ public static class Extensions
     /// <typeparam name="TSource">Type of the function input.</typeparam>
     /// <typeparam name="TResult">Type of the function output.</typeparam>
     /// <param name="f">The function being extended.</param>
-    extension<TSource, TResult>([NotNull] Func<TSource, TResult> f)
+    extension<TSource, TResult>([NotNull] Func<TSource, TResult>)
     {
-        /// <summary>
-        /// Applies the function to <paramref name="arg"/> and returns the result.
-        /// </summary>
-        /// <param name="arg">Argument to pass to the function.</param>
-        /// <returns>The result of invoking the function with <paramref name="arg"/>.</returns>
-        public TResult PipeBack(TSource arg) => f(arg);
-
         /// <summary>
         /// Operator overload to support function-first pipe syntax: <c>func >> arg</c>.
         /// </summary>
-        /// <param name="g">Function to apply.</param>
-        /// <param name="arg">Argument to pass to <paramref name="g"/>.</param>
-        /// <returns>The result of invoking <paramref name="g"/> with <paramref name="arg"/>.</returns>
-        public static TResult operator >>(Func<TSource, TResult> g, TSource arg) => g(arg);
+        /// <param name="f"></param>
+        /// <param name="x"></param>
+        /// <returns>The result of invoking <paramref name="f"/> with <paramref name="x"/>.</returns>
+        public static TResult operator >>(Func<TSource, TResult> f, TSource x) => f(x);
+    }
+    extension<TSource, TResult>([NotNull] Func<TSource>)
+    {
+        /// <summary>
+        /// Enables function composition using the right-shift operator: <c>f1 >> f2</c> is equivalent to <c>() => f2(f1())</c>.
+        /// </summary>
+        /// <param name="f1"></param>
+        /// <param name="f2"></param>
+        /// <returns></returns>
+        public static Func<TResult> operator >>(Func<TSource> f1, Func<TSource, TResult> f2) => () => f2(f1());
+    }
+    extension<TSource, TIntermediate, TResult>([NotNull] Func<TSource, TIntermediate>)
+    {
+        /// <summary>
+        /// Enables function composition using the right-shift operator: <c>f1 >> f2</c> is equivalent to <c>x => f2(f1(x))</c>.
+        /// </summary>
+        /// <param name="f1"></param>
+        /// <param name="f2"></param>
+        /// <returns></returns>
+        public static Func<TSource, TResult> operator >>(Func<TSource, TIntermediate> f1, Func<TIntermediate, TResult> f2) => source => f2(f1(source));
     }
 }

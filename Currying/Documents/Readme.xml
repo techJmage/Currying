@@ -37,9 +37,6 @@
         <member name="M:Currying.Extensions.op_RightShift``2(``0,System.Func{``0,``1})">
             <inheritdoc cref="M:Currying.Extensions.&lt;G&gt;$B7F0343159FB3A22D67EC9801612841A`2.op_RightShift(`0,System.Func{`0,`1})"/>
         </member>
-        <member name="M:Currying.Extensions.PipeBack``2(System.Func{``0,``1},``0)">
-            <inheritdoc cref="M:Currying.Extensions.&lt;G&gt;$9A0204638C6A592B54686EAB5A687859`2.PipeBack(`0)"/>
-        </member>
         <member name="M:Currying.Extensions.op_RightShift``2(System.Func{``0,``1},``0)">
             <inheritdoc cref="M:Currying.Extensions.&lt;G&gt;$9A0204638C6A592B54686EAB5A687859`2.op_RightShift(System.Func{`0,`1},`0)"/>
         </member>
@@ -150,7 +147,7 @@
             <param name="g">The function to apply.</param>
             <returns>The result of applying <paramref name="g"/> to <paramref name="arg"/>.</returns>
         </member>
-        <member name="T:Currying.Extensions.&lt;G&gt;$9A0204638C6A592B54686EAB5A687859`2.&lt;M&gt;$04436269E3A46C1D9C1EC050836EB9B7">
+        <member name="T:Currying.Extensions.&lt;G&gt;$9A0204638C6A592B54686EAB5A687859`2.&lt;M&gt;$5A2238FFFAB0868ADDC676FC9919C98F">
             <summary>
             Provides pipe-back helpers and an operator overload for functions so you can call <c>func >> value</c> as a shorthand for <c>func(value)</c>.
             </summary>
@@ -158,20 +155,13 @@
             <typeparam name="TResult">Type of the function output.</typeparam>
             <param name="f">The function being extended.</param>
         </member>
-        <member name="M:Currying.Extensions.&lt;G&gt;$9A0204638C6A592B54686EAB5A687859`2.PipeBack(`0)">
-            <summary>
-            Applies the function to <paramref name="arg"/> and returns the result.
-            </summary>
-            <param name="arg">Argument to pass to the function.</param>
-            <returns>The result of invoking the function with <paramref name="arg"/>.</returns>
-        </member>
         <member name="M:Currying.Extensions.&lt;G&gt;$9A0204638C6A592B54686EAB5A687859`2.op_RightShift(System.Func{`0,`1},`0)">
             <summary>
             Operator overload to support function-first pipe syntax: <c>func >> arg</c>.
             </summary>
-            <param name="g">Function to apply.</param>
-            <param name="arg">Argument to pass to <paramref name="g"/>.</param>
-            <returns>The result of invoking <paramref name="g"/> with <paramref name="arg"/>.</returns>
+            <param name="f"></param>
+            <param name="x"></param>
+            <returns>The result of invoking <paramref name="f"/> with <paramref name="x"/>.</returns>
         </member>
     </members>
 </doc>
