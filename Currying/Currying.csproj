@@ -4,7 +4,7 @@
 		<TargetFramework>net10.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<VersionPrefix>1.1.0</VersionPrefix>
+		<VersionPrefix>2.0.0</VersionPrefix>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<LangVersion>latest</LangVersion>
 		<Authors>Tech J Mage</Authors>
@@ -13,7 +13,7 @@
 		<RepositoryUrl>https://github.com/techjmage/Currying</RepositoryUrl>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<DocumentationFile>$(MSBuildProjectDirectory)\Documents\Readme.xml</DocumentationFile>
+		<DocumentationFile>..\Readme.xml</DocumentationFile>
 		<DefaultDocumentationGeneratedPages>Assembly</DefaultDocumentationGeneratedPages>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<DefaultDocumentationAssemblyPageName>README</DefaultDocumentationAssemblyPageName>
@@ -26,4 +26,9 @@
 		</PackageReference>
 		<None Include="..\README.md" Pack="true" PackagePath="" />
 	</ItemGroup>
+	<!--<ItemGroup>
+	  <None Update="Documents\README.md">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>-->
 </Project>

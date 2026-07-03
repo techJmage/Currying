@@ -40,6 +40,15 @@
         <member name="M:Currying.Extensions.op_RightShift``2(System.Func{``0,``1},``0)">
             <inheritdoc cref="M:Currying.Extensions.&lt;G&gt;$9A0204638C6A592B54686EAB5A687859`2.op_RightShift(System.Func{`0,`1},`0)"/>
         </member>
+        <member name="M:Currying.Extensions.op_RightShift``2(System.Func{``0},System.Func{``0,``1})">
+            <inheritdoc cref="M:Currying.Extensions.&lt;G&gt;$8FDFD8333A6C4A7CB52CB3816594344D`2.op_RightShift(System.Func{`0},System.Func{`0,`1})"/>
+        </member>
+        <member name="M:Currying.Extensions.op_RightShift``3(System.Func{``0,``1},System.Func{``1,``2})">
+            <inheritdoc cref="M:Currying.Extensions.&lt;G&gt;$94714F2E1CB57D8C2C6720D994DCC5BA`3.op_RightShift(System.Func{`0,`1},System.Func{`1,`2})"/>
+        </member>
+        <member name="M:Currying.Extensions.op_LeftShift``3(System.Func{``1,``2},System.Func{``0,``1})">
+            <inheritdoc cref="M:Currying.Extensions.&lt;G&gt;$6940C37DE69DC98DA408B61E7878E01A`3.op_LeftShift(System.Func{`1,`2},System.Func{`0,`1})"/>
+        </member>
         <member name="T:Currying.Extensions.&lt;G&gt;$8048A6C8BE30A622530249B904B537EB`1.&lt;M&gt;$9693FCD04DC098E818044F36B6B87842">
             <summary>
             Provides object-level helpers for a generic instance of <typeparamref name="T"/>.
@@ -163,5 +172,22 @@
             <param name="x"></param>
             <returns>The result of invoking <paramref name="f"/> with <paramref name="x"/>.</returns>
         </member>
+        <member name="M:Currying.Extensions.&lt;G&gt;$8FDFD8333A6C4A7CB52CB3816594344D`2.op_RightShift(System.Func{`0},System.Func{`0,`1})">
+            <summary>
+            Enables function composition using the right-shift operator: <c>f1 >> f2</c> is equivalent to <c>() => f2(f1())</c>.
+            </summary>
+            <param name="f1"></param>
+            <param name="f2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Currying.Extensions.&lt;G&gt;$94714F2E1CB57D8C2C6720D994DCC5BA`3.op_RightShift(System.Func{`0,`1},System.Func{`1,`2})">
+            <summary>
+            Enables function composition using the right-shift operator: <c>f1 >> f2</c> is equivalent to <c>x => f2(f1(x))</c>.
+            </summary>
+            <param name="f1"></param>
+            <param name="f2"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Currying.Extensions.&lt;G&gt;$6940C37DE69DC98DA408B61E7878E01A`3.op_LeftShift(System.Func{`1,`2},System.Func{`0,`1})" -->
     </members>
 </doc>

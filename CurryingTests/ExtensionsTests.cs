@@ -90,6 +90,16 @@ public class ExtensionsTests
         Assert.AreEqual(result, result3);
     }
     [TestMethod]
+    public void BackwardCompose_InvokesFunction()
+    {
+        Func<int, int> squareIt = x => x * x;
+        Func<int, string> toString = i => $"Value:{i}";
+        Func<string, string> appendExclamation = s => s + "!";
+        var sqToExclammation = appendExclamation << toString << squareIt;
+        var result = sqToExclammation >> 5;
+        Assert.AreEqual("Value:25!", result);
+    }
+    [TestMethod]
     public void ForwardComposeZeroArg_InvokesFunction()
     {
         Func<string> dateString = () => DateTime.Today.ToString("yyyy-MM-dd");
@@ -102,11 +112,19 @@ public class ExtensionsTests
     [TestMethod]
     public void ComposeZeroArg_InvokesFunction()
     {
-        var bom = new Table("BOM", ["Part1", "Part2", "Part2"]);
+        var bom = new Table("BOM", new Dictionary<string, string> { ["Part1"] = "Value1", ["Part2"] = "Value2", ["Part3"] = "Value3" });
+        //Func<Table, (Table tbl, string col)> ColOf = tbl => (tbl, );
         Func<(Table tbl, string col, string value), Table> filterOn = (args) => args.tbl;
-        Func<(Table tbl, string col), List<string>> select = (args) => args.tbl.Columns.FindAll(c => c.EndsWith(args.col));
+        //Func<(Table tbl, string col, string value), Table> filterOn = (args) => args.tbl;
+
+        Func<(Table tbl, string col), List<string>> select = (args) => args.tbl.Columns.Values.Where(v => v.EndsWith(args.col)).ToList();
+        Func<Table, List<string>> selectMC = (args) => args.Columns.Where(v => v.Key.StartsWith("MC")).Select(p => p.Value).ToList();
+
         Func<List<string>, string> sumup = (cols) => string.Join(",", cols);
-        var composed = filterOn >> select >> sumup;
+        var composed = filterOn >> selectMC >> sumup;
+        var composed2 = ((bom, "MC", "C") >> filterOn, "PHR") >> select >> sumup;
+        //x >> y >> func is equivalent to func(y(x))
+        //tbl >> withCol >> value >> filteron;
     }
-    public record Table(string Name, List<string> Columns);
+    public record Table(string Name, Dictionary<string, string > Columns);
 }

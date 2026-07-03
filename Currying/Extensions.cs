@@ -171,4 +171,16 @@ public static class Extensions
         /// <returns></returns>
         public static Func<TSource, TResult> operator >>(Func<TSource, TIntermediate> f1, Func<TIntermediate, TResult> f2) => source => f2(f1(source));
     }
+    extension<TSource, TIntermediate, TResult>([NotNull] Func<TIntermediate, TResult>)
+    {
+        /// <summary>
+        /// Enables function composition using the left-shift operator: <c>f2 << f1</c> is equivalent to <c>x => f2(f1(x))</c>.
+        /// </summary>
+        /// <param name="f2">The f2.</param>
+        /// <param name="f1">The f1.</param>
+        /// <returns>
+        /// The result of the operator.
+        /// </returns>
+        public static Func<TSource, TResult> operator <<(Func<TIntermediate, TResult> f2, Func<TSource, TIntermediate> f1) => source => f2(f1(source));
+    }
 }
